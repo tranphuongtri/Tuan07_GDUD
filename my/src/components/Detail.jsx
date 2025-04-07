@@ -12,10 +12,13 @@ const orders = [
 const DetailedReport = () => {
     return (
         <div className="bg-white p-4 shadow rounded-lg mt-5">
-            <h3 className="text-gray-600 text-lg font-bold mb-3">Detailed Report</h3>
+            <div className="flex justify-between items-center"> <h3 className="text-gray-600 text-lg font-bold mb-3 ">Detailed Report</h3>
+                <div className="flex items-center"><button className="bg-pink-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mx-3">Import</button>
+                    <button className="bg-pink-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mx-3">Export</button></div></div>
             <table className="w-full text-left">
                 <thead>
                     <tr className="text-gray-500">
+                        <th className="p-2"><input type="checkbox" name="" id="" /></th>
                         <th className="p-2">Customer Name</th>
                         <th className="p-2">Company</th>
                         <th className="p-2">Order Value</th>
@@ -26,6 +29,7 @@ const DetailedReport = () => {
                 <tbody>
                     {orders.map((order, index) => (
                         <tr key={index} className="border-t text-gray-700">
+                            <th className="p-2"><input type="checkbox" name="" id="" /></th>
                             <td className="p-2">{order.name}</td>
                             <td className="p-2">{order.company}</td>
                             <td className="p-2">${order.value}</td>
@@ -33,6 +37,7 @@ const DetailedReport = () => {
                             <td className="p-2">
                                 <StatusBadge status={order.status} />
                             </td>
+                            <td className="p-2"><button className="">v</button></td>
                         </tr>
                     ))}
                 </tbody>
